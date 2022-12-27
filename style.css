@@ -75,12 +75,17 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-out 0.4s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
+
+#switch button:hover {
+  outline: 8px solid var(--hightligh-color);
+}
+
 #switch span {
   display: block;
   width: 64px;
@@ -156,5 +161,22 @@ footer {
   }
   .light {
     --bg-url: url(./assets/Interface=Desktop Theme=Light mode.png);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    letf: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    letf: 0;
   }
 }
